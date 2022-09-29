@@ -10,12 +10,11 @@ import formatDate from '@/lib/formatDate'
 import { PostFrontMatter } from '@/lib/types'
 
 import { useStyles } from '@/components/PostsList/PostsList.styles'
-
-import ViewCounter from '../ViewCounter'
+import TagList from '@/components/Tag'
 
 export default function PostsList({ post }: { post: PostFrontMatter }) {
   const { locale } = useRouter()
-  const { slug, date, title, summary, image } = post
+  const { slug, date, title, summary, image, tags } = post
   const { classes } = useStyles()
   const matches = useMediaQuery('(min-width: 940px)')
   const { hovered, ref } = useHover<HTMLAnchorElement>()
@@ -93,8 +92,8 @@ export default function PostsList({ post }: { post: PostFrontMatter }) {
           >
             <Group spacing={8} className={classes.info}>
               <Text>{formatDate(date, locale)}</Text>
-              {' - '}
-              <ViewCounter slug={slug} text={false} type='GET' />
+              {/*<ViewCounter slug={slug} text={false} type='GET' />*/}
+              <TagList tags={tags} />
             </Group>
             <Title order={2}>{title}</Title>
             <Text>{summary}</Text>

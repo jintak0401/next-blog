@@ -10,11 +10,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     description: '小康的個人網站和部落格',
     site_url: 'https://honghong.me',
     feed_url: 'https://honghong.me/feed.xml',
-    language: 'zh-TW',
+    language: 'ko-KR',
     image_url: 'https://honghong.me/static/images/og/og.png',
   })
 
-  const allPosts = getAllPosts('zh-TW')
+  const allPosts = getAllPosts('ko-KR')
 
   allPosts.map((post: PostFrontMatter) => {
     feed.item({

@@ -23,7 +23,7 @@ export const dateSortDesc = (a: string, b: string) => {
 export const formatSlug = (slug: string) => slug.replace(/\.mdx$/, '')
 
 export async function mdxToHtml(source: string, data: PostItems) {
-  const mdxSource = await serialize(source, {
+  return await serialize(source, {
     mdxOptions: {
       remarkPlugins: [remarkGfm, remarkImgToJsx],
       rehypePlugins: [
@@ -56,8 +56,6 @@ export async function mdxToHtml(source: string, data: PostItems) {
     },
     scope: data,
   })
-
-  return mdxSource
 }
 
 export const getFileSlugs = (type: FileType, locale: string): string[] => {
@@ -114,4 +112,9 @@ export const getAllPosts = (locale: string) => {
   })
 
   return allFrontMatter.sort((a, b) => dateSortDesc(a.date, b.date))
+}
+
+export const cachedPosts = {
+  'ko-KR': getAllPosts('ko-KR'),
+  en: getAllPosts('en'),
 }

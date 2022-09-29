@@ -1,7 +1,7 @@
 import { createStyles } from '@mantine/core'
 
 export const HEADER_HEIGHT = 60
-export const HEADER_BREAKPOINT = 860
+export const HEADER_BREAKPOINT = 760
 
 export const useStyles = createStyles((theme) => ({
   header: {

@@ -4,9 +4,7 @@ const formatDate = (date: string | Date, locale: string) => {
     month: 'long',
     day: 'numeric',
   }
-  const now = new Date(date).toLocaleDateString(locale, options)
-
-  return now
+  return new Date(date).toLocaleDateString(locale, options)
 }
 
 export default formatDate

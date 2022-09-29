@@ -26,6 +26,7 @@ import Layout from '@/components/Layout'
 import Link from '@/components/Link'
 import ReadingProgressBar from '@/components/ReadingProgressBar'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import SeriesList from '@/components/SeriesList'
 import TableOfContents from '@/components/TableOfContents'
 import { HeadingScrollSpy } from '@/components/TableOfContents/types'
 import ViewCounter from '@/components/ViewCounter'
@@ -53,6 +54,7 @@ const redditShare = (slug: string, title: string) =>
 export default function BlogLayout({
   post,
   ogImage,
+  series,
   children,
 }: PropsWithChildren<BlogPostProps>) {
   const { date, title, summary, slug, modifiedTime } = post.frontMatter
@@ -153,6 +155,7 @@ export default function BlogLayout({
         </span>
       </div>
       <Divider />
+      <SeriesList seriesPosts={series} />
       <Box mt={32} className={classes.contentWrapper}>
         <article id='blog-content'>{children}</article>
         <TableOfContents

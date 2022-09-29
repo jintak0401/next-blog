@@ -10,7 +10,7 @@ export default function HeaderLogo() {
   return (
     <Link href='/' className={classes.link}>
       <Logo width={28} height={28} fill='#c92a2a' />
-      <span className={classes.text}>小康</span>
+      <span className={classes.text}>Time Gambit</span>
     </Link>
   )
 }

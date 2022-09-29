@@ -34,14 +34,17 @@ export const links = {
           href: '/projects',
           title: 'Projects',
         },
+        /*
         {
           href: 'https://umami.honghong.me/share/KTWjRi4f/blog',
           title: 'Analytics',
         },
+*/
       ],
     },
     {
       list: [
+        /*
         {
           href: 'https://www.facebook.com/tszhonglai.0411/',
           title: 'Facebook',
@@ -51,12 +54,13 @@ export const links = {
           title: 'Instagram',
         },
         {
-          href: 'https://github.com/tszHong0411',
-          title: 'GitHub',
-        },
-        {
           href: 'https://www.youtube.com/channel/UC2hMWOaOlk9vrkvFVaGmn0Q',
           title: 'YouTube',
+        },
+*/
+        {
+          href: 'https://github.com/jintak0401',
+          title: 'GitHub',
         },
       ],
     },

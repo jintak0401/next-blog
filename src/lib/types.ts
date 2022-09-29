@@ -28,6 +28,9 @@ export type PostFrontMatter = {
   image: string
   slug: string
   views?: string
+
+  category?: string
+  tags?: string[]
 }
 
 export type PageFrontMatter = {
@@ -44,6 +47,7 @@ export type PostProps = {
 export type BlogPostProps = {
   post: PostProps
   ogImage: string
+  series?: PostFrontMatter[]
 }
 
 export type FileType = 'blog' | 'page'

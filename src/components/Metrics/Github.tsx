@@ -8,9 +8,9 @@ import { Github } from '@/components/Metrics/types'
 
 export default function GitHubCard() {
   const { data } = useSWR<Github>('/api/github', fetcher)
-  const stars = new Number(data?.stars)
-  const followers = new Number(data?.followers)
-  const link = 'https://github.com/tszhong0411'
+  const stars = Number(data?.stars)
+  const followers = Number(data?.followers)
+  const link = 'https://github.com/jintak0401'
   const { classes } = useStyles()
 
   return (

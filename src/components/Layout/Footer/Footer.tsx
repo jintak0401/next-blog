@@ -90,7 +90,7 @@ export default function Footer() {
       </div>
       <div className={classes.footerBottom}>
         © {new Date().getFullYear()}
-        {' 小康'}
+        &nbsp;&nbsp;&nbsp;Time Gambit
       </div>
     </footer>
   )

@@ -24,14 +24,14 @@ export default function Hero() {
             />
           </Box>
           <Title order={1} sx={{ fontSize: 32, fontWeight: 700 }}>
-            Hey, I&apos;m 小康 👋
+            내 이름은 Time Gambit. 웹 개발자죠.
           </Title>
           <Text
             size={20}
             weight={500}
             color={dark ? theme.colors.gray[6] : theme.colors.gray[8]}
           >
-            A student who loves web development
+            웹 개발을 좋아하는 취준생입니다.
           </Text>
         </Card>
       </Grid.Col>
@@ -69,6 +69,7 @@ export default function Hero() {
           </Text>
         </Card>
       </Grid.Col>
+      {/*
       <Grid.Col span={12} md={4}>
         <Card
           component={Link}
@@ -87,6 +88,7 @@ export default function Hero() {
           </Text>
         </Card>
       </Grid.Col>
+*/}
     </Grid>
   )
 }

@@ -7,7 +7,7 @@ export default function ScrollTopAndComment() {
   const [scroll, scrollTo] = useWindowScroll()
 
   return (
-    <Affix position={{ bottom: 20, right: 20 }}>
+    <Affix position={{ bottom: 20, right: 20 }} zIndex={30}>
       <Transition transition='slide-up' mounted={scroll.y > 0}>
         {(transitionStyles) => (
           <Stack spacing='xs' style={transitionStyles}>

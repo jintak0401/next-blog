@@ -1,4 +1,4 @@
-import Giscus from '@giscus/react'
+import Giscus, { Repo } from '@giscus/react'
 import { Box, useMantineColorScheme } from '@mantine/core'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -11,10 +11,10 @@ const Comment = () => {
   return (
     <Box my={32} id='comment'>
       <Giscus
-        repo='tszhong0411/honghong.me'
-        repoId='R_kgDOGxHFnA'
-        category='Blog Comments'
-        categoryId='DIC_kwDOGxHFnM4CBGIQ'
+        repo={process.env.NEXT_PUBLIC_GISCUS_REPO as Repo}
+        repoId={process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID}
+        category={process.env.NEXT_PUBLIC_GISCUS_CATEGORY}
+        categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID}
         mapping='pathname'
         reactionsEnabled='1'
         emitMetadata='1'

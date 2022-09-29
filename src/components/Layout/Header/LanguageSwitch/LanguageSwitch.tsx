@@ -33,7 +33,10 @@ export default function LanguageSwitch() {
 
   const languages = {
     'zh-TW': {
-      name: '繁體中文',
+      name: '중국어',
+    },
+    'ko-KR': {
+      name: '한국어',
     },
     en: {
       name: 'English',

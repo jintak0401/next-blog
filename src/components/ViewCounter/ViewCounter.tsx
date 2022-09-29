@@ -15,7 +15,7 @@ export default function ViewCounter({
   type = 'POST',
 }: ViewCounterTypes) {
   const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher)
-  const views = new Number(data?.total)
+  const views = Number(data?.total)
   const { t } = useTranslation('common')
 
   React.useEffect(() => {

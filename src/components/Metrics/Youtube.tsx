@@ -9,8 +9,8 @@ import { YouTube } from '@/components/Metrics/types'
 export default function YouTubeCard() {
   const { data } = useSWR<YouTube>('/api/youtube', fetcher)
 
-  const subscriberCount = new Number(data?.subscriberCount)
-  const viewCount = new Number(data?.viewCount)
+  const subscriberCount = Number(data?.subscriberCount)
+  const viewCount = Number(data?.viewCount)
   const link = 'https://www.youtube.com/channel/UC2hMWOaOlk9vrkvFVaGmn0Q'
   const { classes } = useStyles()
 

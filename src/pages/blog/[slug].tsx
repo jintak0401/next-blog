@@ -3,7 +3,12 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 
 import { getOgImage } from '@/lib/getOgImage'
-import { formatSlug, getContentBySlug, getFileSlugs } from '@/lib/mdx'
+import {
+  cachedPosts,
+  formatSlug,
+  getContentBySlug,
+  getFileSlugs,
+} from '@/lib/mdx'
 import { BlogPostProps, PostFrontMatter } from '@/lib/types'
 
 import MDXComponents from '@/components/MDXComponents'
@@ -11,9 +16,9 @@ import Typography from '@/components/Typography'
 
 import BlogLayout from '@/layouts/blog'
 
-export default function Blog({ post, ogImage }: BlogPostProps) {
+export default function Blog({ post, ogImage, series }: BlogPostProps) {
   return (
-    <BlogLayout post={post} ogImage={ogImage}>
+    <BlogLayout post={post} ogImage={ogImage} series={series}>
       <Typography>
         <MDXRemote
           {...post.source}
@@ -34,12 +39,18 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 
     const frontMatter = post.frontMatter as PostFrontMatter
 
+    const cache = cachedPosts[locale]
+    let series = null
+    if (frontMatter.category) {
+      series = cache.filter((post) => post.category === frontMatter.category)
+    }
+
     const ogImage = await getOgImage(
       `/blog?title=${frontMatter.title}&description=${frontMatter.summary}`
     )
 
     return {
-      props: { post, ogImage },
+      props: { post, ogImage, series },
     }
   } catch (error) {
     // eslint-disable-next-line no-console

@@ -16,8 +16,8 @@ import React from 'react'
 
 import { isProd } from '@/lib/isProduction'
 
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 import { links } from '@/components/Layout/Header/links'
-import Umami from '@/components/Umami'
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props
@@ -109,7 +109,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
                     },
                   })}
                 />
-                {isProd && <Umami />}
+                {isProd && <GoogleAnalytics />}
                 <Component {...pageProps} />
               </SpotlightProvider>
             </NotificationsProvider>

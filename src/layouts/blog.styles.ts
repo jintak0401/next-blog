@@ -39,7 +39,7 @@ export const useStyles = createStyles((theme) => ({
       width: '100%',
 
       [theme.fn.largerThan('lg')]: {
-        width: '40em',
+        maxWidth: '40em',
       },
     },
   },

@@ -67,7 +67,7 @@ function GuestbookEntry({ entry, user }) {
       <Group>
         <Badge
           variant='gradient'
-          gradient={{ from: 'orange', to: 'red' }}
+          gradient={{ from: 'orange', to: 'blue' }}
           size='lg'
           sx={{
             fontWeight: 500,

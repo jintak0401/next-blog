@@ -17,7 +17,7 @@ const createSitemap = (
 `
 
 export async function getServerSideProps({ res }) {
-  const slugs = getFileSlugs('blog', 'zh-TW')
+  const slugs = getFileSlugs('blog', 'ko-KR')
   const allPages = [
     ...slugs.map((slug) => `blog/${slug}`),
     ...[
